@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Portfólio de Equipamentos</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body class="bg-light">
+
+<div class="container py-5">
+    <h2 class="mb-4">📂 Portfólio de Equipamentos</h2>
+
+    <!-- Upload -->
+    <form action="/upload" method="post" enctype="multipart/form-data" class="mb-4">
+        <div class="input-group">
+            <input type="file" name="file" class="form-control" required>
+            <button class="btn btn-primary">Upload Excel / CSV</button>
+        </div>
+    </form>
+
+    <!-- Busca -->
+    <form action="/buscar" method="post" class="mb-4">
+        <input type="text" name="busca" class="form-control" placeholder="Buscar por nome, código, categoria..." required>
+    </form>
+
+    <!-- Resultados -->
+    <div class="row">
+        {% for eq in resultados %}
+            <div class="col-md-4 mb-3">
+                <div class="card shadow-sm p-3">
+                    {% for k, v in eq.items() %}
+                        <strong>{{ k }}:</strong> {{ v }}<br>
+                    {% endfor %}
+                </div>
+            </div>
+        {% endfor %}
+    </div>
+</div>
+
+</body>
+</html>
