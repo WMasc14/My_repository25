@@ -48,4 +48,4 @@ ax.axis("equal")
 st.pyplot(fig)
 
 st.markdown("---")
-st.markdown("© 2026 Dashboard de Despesas")
+st.markdown("© 2023 Dashboard de Despesas")
